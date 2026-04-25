@@ -1,0 +1,119 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const topics = [
+  {
+    title: "Mass Sheltering & Emergency Assistance",
+    description: "Best practices for accessible, equitable shelter operations that serve all community members, including those with access and functional needs.",
+    takeaways: ["Inclusive shelter design", "Compliance with ADA and beyond", "Staff training for diverse populations", "Real examples from CA disasters"],
+  },
+  {
+    title: "Disaster Response & Recovery Operations",
+    description: "How to effectively manage both immediate response and long-term recovery from field operations to disaster recovery centers.",
+    takeaways: ["Incident command fundamentals", "EOC vs. field coordination", "Long-term recovery strategies", "Lessons from 2024-2025 disasters"],
+  },
+  {
+    title: "EOC Coordination",
+    description: "Running effective Emergency Operations Centers that coordinate multi-agency response and ensure clear communication.",
+    takeaways: ["EOC setup and staffing", "Multi-agency coordination", "Information management", "Common EOC mistakes to avoid"],
+  },
+  {
+    title: "Access & Functional Needs Planning",
+    description: "Ensuring your emergency plans account for seniors, those with disabilities, non-English speakers, and other vulnerable populations.",
+    takeaways: ["Vulnerability assessment", "Partner identification", "Communication accessibility", "Kit and supply considerations"],
+  },
+  {
+    title: "Community Preparedness & Outreach",
+    description: "Engaging underserved communities before disasters strike to build resilience from the ground up.",
+    takeaways: ["Trust building", "Cultural competency", "Grassroots outreach", "Measuring preparedness"],
+  },
+];
+---
+
+<Layout title="Speaking">
+  <section class="bg-gradient-to-r from-primary to-blue-900 text-white py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Speaking Topics</h1>
+      <p class="text-xl text-gray-200">Keynotes and workshops on emergency preparedness</p>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-8">
+        {topics.map((topic, index) => (
+          <div class="bg-white border border-gray-200 rounded-lg p-8 hover:shadow-lg transition">
+            <div class="flex items-center gap-4 mb-4">
+              <span class="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold">
+                {index + 1}
+              </span>
+              <h3 class="text-xl font-bold text-primary">{topic.title}</h3>
+            </div>
+            <p class="text-gray-600 mb-6">{topic.description}</p>
+            <h4 class="font-semibold text-primary mb-3">Key Takeaways:</h4>
+            <ul class="space-y-2">
+              {topic.takeaways.map((takeaway) => (
+                <li class="flex items-center gap-2 text-gray-700">
+                  <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                  {takeaway}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8 text-primary">What to Expect</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-lg mb-2">Engaging Presentations</h3>
+          <p class="text-gray-600">Interactive keynotes that inspire action</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-lg mb-2">Real-World Examples</h3>
+          <p class="text-gray-600">Lessons from actual disasters</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-lg mb-2">Actionable Frameworks</h3>
+          <p class="text-gray-600">Tools you can use immediately</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-primary text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-6">Book Dr. Phillips-Smith for Your Event</h2>
+      <p class="text-xl text-gray-200 mb-8">Bring real emergency expertise to your conference, workshop, or organization</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="bg-accent hover:bg-orange-600 px-8 py-3 rounded-lg font-semibold text-lg transition">
+          Request Booking
+        </a>
+        <a href="mailto:hello@socalep.com" class="border-2 border-white hover:bg-white hover:text-primary px-8 py-3 rounded-lg font-semibold text-lg transition">
+          Email Us
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

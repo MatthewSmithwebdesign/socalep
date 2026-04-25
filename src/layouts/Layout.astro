@@ -1,0 +1,58 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "SoCal EP - Emergency planning and training for Southern California" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title} | SoCal EP</title>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <nav class="bg-primary text-white">
+      <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+        <a href="/" class="text-xl font-bold">SoCal EP</a>
+        <div class="flex gap-6 items-center">
+          <a href="/services" class="hover:text-accent transition">Services</a>
+          <a href="/speaking" class="hover:text-accent transition">Speaking</a>
+          <a href="/about" class="hover:text-accent transition">About</a>
+          <a href="/contact" class="bg-accent hover:bg-orange-600 px-4 py-2 rounded font-medium transition">
+            Contact
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <footer class="bg-primary text-white py-8">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div class="text-center md:text-left">
+            <p class="font-bold text-lg">SoCal EP</p>
+            <p class="text-sm text-gray-300">Emergency planning for Southern California</p>
+          </div>
+          <div class="flex gap-6">
+            <a href="/services" class="hover:text-accent transition">Services</a>
+            <a href="/speaking" class="hover:text-accent transition">Speaking</a>
+            <a href="/about" class="hover:text-accent transition">About</a>
+            <a href="/contact" class="hover:text-accent transition">Contact</a>
+          </div>
+        </div>
+        <div class="mt-6 pt-6 border-t border-gray-700 text-center text-sm text-gray-400">
+          <p>&copy; {new Date().getFullYear()} SoCal Emergency Planning. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

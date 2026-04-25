@@ -1,0 +1,120 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const founder = {
+  name: "Dr. Halima Phillips-Smith",
+  title: "Program Manager of Mass Sheltering",
+  organization: "California Department of Social Services (CDSS)",
+  location: "San Diego and Imperial Counties",
+  degree: "PhD in Emergency Management, Capella University",
+  dissertation: "Bridging the Gap: Exploring Disaster Preparedness, Challenges, and Community Engagement for Senior Citizens in Southern California",
+  certifications: [
+    "FEMA Incident Command System",
+    "Emergency Operations",
+    "Mass Care",
+    "Disaster Recovery",
+  ],
+  experience: [
+    "2024 San Diego Flooding - Response & Recovery",
+    "2025 Los Angeles Wildfires - Response & Recovery",
+    "Emergency Operations Centers (EOCs)",
+    "Disaster Recovery Centers (DRCs)",
+  ],
+  focus: [
+    "Mass Sheltering & Emergency Assistance",
+    "Disaster Response & Recovery Operations",
+    "EOC Coordination",
+    "Access & Functional Needs / Inclusive Planning",
+    "Community Preparedness & Outreach",
+  ],
+};
+---
+
+<Layout title="About Us">
+  <section class="bg-gradient-to-r from-primary to-blue-900 text-white py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">About SoCal EP</h1>
+      <p class="text-xl text-gray-200">Expert emergency planning grounded in real-world experience</p>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-3 gap-12">
+        <div class="md:col-span-2">
+          <h2 class="text-3xl font-bold mb-6 text-primary">{founder.name}</h2>
+          <p class="text-lg text-gray-600 mb-4">{founder.title}</p>
+          <p class="text-gray-500 mb-6">{founder.organization}</p>
+          
+          <p class="text-lg text-gray-700 mb-6">
+            Dr. Halima Phillips-Smith is an emergency management professional specializing in mass sheltering, disaster response, and recovery operations, with a focus on underserved and access and functional needs populations.
+          </p>
+
+          <p class="text-lg text-gray-700 mb-6">
+            She currently serves as Program Manager of Mass Sheltering with the California Department of Social Services (CDSS), leading planning, coordination, and response efforts across San Diego and Imperial Counties. Her work ensures that sheltering operations are accessible, equitable, and responsive to the needs of vulnerable communities during emergencies.
+          </p>
+
+          <h3 class="text-xl font-bold mb-4 text-primary">Recent Disaster Experience</h3>
+          <p class="text-gray-700 mb-6">
+            Dr. Phillips-Smith has played active roles in major disaster operations, including the 2024 San Diego flooding and the 2025 Los Angeles wildfires. She has supported both response and recovery through work in Emergency Operations Centers (EOCs) and Disaster Recovery Centers (DRCs), helping displaced residents access shelter, resources, and long-term recovery support.
+          </p>
+
+          <h3 class="text-xl font-bold mb-4 text-primary">Education</h3>
+          <p class="text-gray-700 mb-2">PhD in Emergency Management, Capella University</p>
+          <p class="text-gray-600 italic mb-6">Dissertation: "{founder.dissertation}"</p>
+          <p class="text-gray-600 mb-6">This research examines critical gaps in preparedness among older adults and highlights the need for stronger local outreach and community engagement.</p>
+        </div>
+
+        <div class="bg-gray-50 p-8 rounded-lg h-fit">
+          <h3 class="text-xl font-bold mb-4 text-primary">Certifications & Training</h3>
+          <ul class="space-y-3">
+            {founder.certifications.map((cert) => (
+              <li class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-gray-700">{cert}</span>
+              </li>
+            ))}
+          </ul>
+
+          <h3 class="text-xl font-bold mt-8 mb-4 text-primary">Areas of Focus</h3>
+          <ul class="space-y-3">
+            {founder.focus.map((area) => (
+              <li class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="text-gray-700">{area}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12 text-primary">Our Mission</h2>
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-xl text-gray-700 mb-8">
+          SoCal EP exists to help organizations across Southern California prepare for, respond to, and recover from emergencies. We believe every community deserves accessible, equitable emergency planning that accounts for the most vulnerable among us.
+        </p>
+        <p class="text-xl text-gray-700">
+          With real-world experience from major California disasters and deep expertise in inclusive planning, we help our clients build resilience from the ground up.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-primary text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-6">Work With Us</h2>
+      <p class="text-xl text-gray-200 mb-8">Bring real emergency expertise to your organization</p>
+      <a href="/contact" class="bg-accent hover:bg-orange-600 px-8 py-3 rounded-lg font-semibold text-lg transition inline-block">
+        Get in Touch
+      </a>
+    </div>
+  </section>
+</Layout>
