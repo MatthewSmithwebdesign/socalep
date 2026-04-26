@@ -20,11 +20,32 @@ const { title, description = "SoCal EP - Emergency planning and training for Sou
     <nav class="bg-primary text-white">
       <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
         <a href="/" class="text-xl font-bold">SoCal EP</a>
-        <div class="flex gap-6 items-center">
+        
+        <!-- Desktop menu -->
+        <div class="hidden md:flex gap-6 items-center">
           <a href="/services" class="hover:text-accent transition">Services</a>
           <a href="/speaking" class="hover:text-accent transition">Speaking</a>
           <a href="/about" class="hover:text-accent transition">About</a>
           <a href="/contact" class="bg-accent hover:bg-orange-600 px-4 py-2 rounded font-medium transition">
+            Contact
+          </a>
+        </div>
+        
+        <!-- Mobile hamburger button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Mobile menu panel -->
+      <div id="mobile-menu" class="hidden md:hidden bg-primary border-t border-gray-700">
+        <div class="px-4 py-4 flex flex-col gap-4">
+          <a href="/services" class="hover:text-accent transition py-2">Services</a>
+          <a href="/speaking" class="hover:text-accent transition py-2">Speaking</a>
+          <a href="/about" class="hover:text-accent transition py-2">About</a>
+          <a href="/contact" class="bg-accent hover:bg-orange-600 px-4 py-2 rounded font-medium transition text-center">
             Contact
           </a>
         </div>
@@ -54,5 +75,14 @@ const { title, description = "SoCal EP - Emergency planning and training for Sou
         </div>
       </div>
     </footer>
+
+    <script>
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      
+      btn?.addEventListener('click', () => {
+        menu?.classList.toggle('hidden');
+      });
+    </script>
   </body>
 </html>
